@@ -28,7 +28,7 @@
     {
       "groupName": "Semantic Release packages",
       "matchDepTypes": ["devDependencies"],
-      "matchPackagePatterns": ["^@semantic-release/", "semantic-release"],,,
+      "matchPackagePatterns": ["^@semantic-release/", "semantic-release"],
       "minimumReleaseAge": "1 day"
     },
     {
