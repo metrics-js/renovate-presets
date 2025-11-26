@@ -1,0 +1,42 @@
+{
+  "extends": ["config:base"],
+  "packageRules": [
+    {
+      "depTypeList": ["dependencies"],
+      "automerge": true,
+      "major": {
+        "automerge": false
+      }
+    },
+    {
+      "depTypeList": ["devDependencies"],
+      "schedule": ["before 4am on the first day of the month"],
+      "automerge": true,
+      "major": {
+        "automerge": false
+      }
+    },
+    {
+      "groupName": "Metrics.js packages",
+      "matchPackagePatterns": ["^@metrics/"]
+    },
+    {
+      "groupName": "Semantic Release packages",
+      "matchDepTypes": ["devDependencies"],
+      "matchPackagePatterns": ["^@semantic-release/", "semantic-release"]
+    },
+    {
+      "groupName": "ESlint and Prettier packages",
+      "matchDepTypes": ["devDependencies"],
+      "matchPackagePatterns": [
+        "eslint-config-airbnb-base",
+        "eslint-config-prettier",
+        "eslint-plugin-prettier",
+        "eslint-plugin-import",
+        "@babel/eslint-parser",
+        "prettier",
+        "eslint"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "extends": ["config:base"],
+  "packageRules": [
+    {
+      "depTypeList": ["dependencies"],
+      "schedule": ["before 4am on monday"],
+      "minimumReleaseAge": "1 day",
+      "automerge": true,
+      "major": {
+        "automerge": false
+      }
+    },
+    {
+      "depTypeList": ["devDependencies"],
+      "schedule": ["before 4am on the first day of the month"],
+      "minimumReleaseAge": "1 day",
+      "automerge": true,
+      "major": {
+        "automerge": false
+      }
+    },
+    {
+      "groupName": "All dependencies (non-major)",
+      "matchDepTypes": ["dependencies"],
+      "matchUpdateTypes": ["patch", "minor"],
+      "minimumReleaseAge": "1 day"
+    },
+    {
+      "groupName": "Semantic Release packages",
+      "matchDepTypes": ["devDependencies"],
+      "matchPackagePatterns": ["^@semantic-release/", "semantic-release"],,,
+      "minimumReleaseAge": "1 day"
+    },
+    {
+      "groupName": "ESlint and Prettier packages",
+      "matchDepTypes": ["devDependencies"],
+      "minimumReleaseAge": "1 day",
+      "matchPackagePatterns": [
+        "eslint-config-airbnb-base",
+        "eslint-config-prettier",
+        "eslint-plugin-prettier",
+        "eslint-plugin-import",
+        "@babel/eslint-parser",
+        "prettier",
+        "eslint"
+      ]
+    }
+  ]
+}
